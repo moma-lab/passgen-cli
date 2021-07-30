@@ -8,7 +8,7 @@ const savePassword = (data) => {
   fs.open(
     path.join(__dirname, '../', 'passwords.txt'),
     'a',
-    777,
+    666,
     (event, id) => {
       // write to file
       fs.write(id, data + os.EOL, null, 'utf-8', () => {
