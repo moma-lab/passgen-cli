@@ -34,21 +34,20 @@ Options:
 
 Type in `$ passgen -h` on your command line to see a help with this options list.
 
-## NPM Packages and Node.js modules used
-
-### Internal Node.js modules
+## Node.js Development Steps
+### Internal Node.js Modules Used
 
 * fs - a module that enables interacting with the local file system (https://nodejs.dev/learn/the-nodejs-fs-module)
 * path - module that provides a lot of very useful functionality to access and interact with the file system (https://nodejs.dev/learn/the-nodejs-path-module)
 * os - module that provides many functions that you can use to retrieve information from the underlying operating system and the computer the program runs on, and interact with it (https://nodejs.dev/learn/the-nodejs-os-module)
 
-### Installed NPM packages
+### NPM Packages Used
 
 * Commander - [https://github.com/tj/commander.js](https://github.com/tj/commander.js)
 * Chalk - [https://github.com/chalk/chalk](https://github.com/chalk/chalk)
 * Clipboardy - [https://github.com/sindresorhus/clipboardy](https://github.com/sindresorhus/clipboardy)
 
-## Development steps
+## Dev Outline
 
 * Create package.json file: `$ npm init` (given name: "passgen")
 * Install npm dependencies: `$ npm i commander chalk clipboardy`
@@ -56,25 +55,28 @@ Type in `$ passgen -h` on your command line to see a help with this options list
   * index.js (main file)
   * utils/createPassword.js
   * utils/savePassword.js
-* code your way :)
-* after finishing coding: edit `package.json`:
+  * utils/shuffle.js
+
+* ... code/implement everything needed ...
+
+* AFTER finishing coding edit `package.json`:
   * Enter the following key-value pairs right under `"main": "index.js"`
 
     ```json
     "preferGlobal": true,   // Designate a package as preferring global installation
-    "bin": "./index.js",    // To map a command name to a local file name (=install an executable into the PATH and create a symlink using "npm link")
+    "bin": "./index.js",    // Map a command name to a local file name (=install an executable into the PATH and create a symlink using "npm link")
     ```
     or
     ```json
-    { "bin" : { "myapp" : "./cli.js" } }
+    { "bin" : { "passgen" : "./index.js" } }
     ```
-
-* type `$ npm link` on the commandline
-  * creates a symlink so we can call "passgen" everywhere in our system
-  * (*hint:* `npm unlink` removes the created symlink)
 
 * open `index.js` and add a shebang `#!/usr/bin/env node` at first line.
   * that's required to be interpretable by the shell when `$ passgen <options>` command is called from command line using 
+
+* type `$ npm link` on the command line
+  * creates a symlink so we can call "passgen" everywhere in our system
+  * (*hint:* `npm unlink` removes the created symlink)
 
 ## Acknowlegements
 
