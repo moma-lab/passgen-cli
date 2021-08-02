@@ -22,15 +22,14 @@ A command line used generator for random passwords written in JavaScript (Node.j
 
 Options:
 
-|                Option | Description                                |
-| --------------------: | :----------------------------------------- |
-|         -V, --version | output the version number                  |
-| -l, --length <number> | specify the password length (default: "8") |
-|            -s, --save | save passwords to passwords.txt            |
-|     -nn, --no-numbers | exclude numbers from password              |
-|     -ns, --no-symbols | exclude symbols from password              |
-|            -h, --help | display help for command                   |
-
+|            Option |    Type    | Description                                |
+| ----------------: | :--------: | :----------------------------------------- |
+|     -V, --version |            | output the version number                  |
+|      -l, --length | \<number\> | specify the password length (default: "8") |
+|        -s, --save |            | save passwords to passwords.txt            |
+| -nn, --no-numbers |            | exclude numbers from password              |
+| -ns, --no-symbols |            | exclude symbols from password              |
+|        -h, --help |            | display help for command                   |
 
 Type in `$ passgen -h` on your command line to see a help with this options list.
 
