@@ -36,15 +36,21 @@ Type in `$ passgen -h` on your command line to see a help with this options list
 ## Node.js Development Steps
 ### Internal Node.js Modules Used
 
-* fs - a module that enables interacting with the local file system (https://nodejs.dev/learn/the-nodejs-fs-module)
-* path - module that provides a lot of very useful functionality to access and interact with the file system (https://nodejs.dev/learn/the-nodejs-path-module)
-* os - module that provides many functions that you can use to retrieve information from the underlying operating system and the computer the program runs on, and interact with it (https://nodejs.dev/learn/the-nodejs-os-module)
+* fs - [https://nodejs.dev/learn/the-nodejs-fs-module](https://nodejs.dev/learn/the-nodejs-fs-module)<br />
+  *a module that enables interacting with the local file system*
+* path - [https://nodejs.dev/learn/the-nodejs-path-module](https://nodejs.dev/learn/the-nodejs-path-module)<br />
+  *a module that provides a lot of very useful functionality to access and interact with the file system*
+* os - [https://nodejs.dev/learn/the-nodejs-os-module](https://nodejs.dev/learn/the-nodejs-os-module)<br />
+  *a module that provides many functions that you can use to retrieve information from the underlying operating system and the computer the program runs on, and interact with it*
 
 ### NPM Packages Used
 
-* Commander - [https://github.com/tj/commander.js](https://github.com/tj/commander.js)
-* Chalk - [https://github.com/chalk/chalk](https://github.com/chalk/chalk)
-* Clipboardy - [https://github.com/sindresorhus/clipboardy](https://github.com/sindresorhus/clipboardy)
+* Commander - [https://github.com/tj/commander.js](https://github.com/tj/commander.js)<br />
+  *a package to easily work with node.js command-line interfaces*
+* Chalk - [https://github.com/chalk/chalk](https://github.com/chalk/chalk)<br />
+  *a package to style command line outputs (strings)*
+* Clipboardy - [https://github.com/sindresorhus/clipboardy](https://github.com/sindresorhus/clipboardy)<br />
+  *a cross-platform package to access the system clipboard (copy/paste)*
 
 ## Dev Outline
 
