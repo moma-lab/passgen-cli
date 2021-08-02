@@ -64,25 +64,44 @@ Type in `$ passgen -h` on your command line to see a help with this options list
 
 * ... code/implement everything needed ...
 
-* AFTER finishing coding edit `package.json`:
-  * Enter the following key-value pairs right under `"main": "index.js"`
+### Run Node.js scripts as shell commands
 
-    ```json
-    "preferGlobal": true,   // Designate a package as preferring global installation
-    "bin": "./index.js",    // Map a command name to a local file name (=install an executable into the PATH and create a symlink using "npm link")
-    ```
-    or
-    ```json
-    { "bin" : { "passgen" : "./index.js" } }
-    ```
+AFTER finishing coding edit `package.json`:
+* Enter the following key-value pairs right under `"main": "index.js"`
 
-* open `index.js` and add a shebang `#!/usr/bin/env node` at first line.
-  * that's required to be interpretable by the shell when `$ passgen <options>` command is called from command line using 
+  ```json
+  "preferGlobal": true,   // Designate a package as preferring global installation
+  "bin": "./index.js",    // Map a command name to a local file name (=install an executable into the PATH and create a symlink using "npm link")
+  ```
+  or
+  ```json
+  { "bin" : { "passgen" : "./index.js" } }
+  ```
+
+* open `index.js` and add a shebang `#!/usr/bin/env node` at first line. That is required to be interpretable by the shell when `$ passgen <options>` is called from CLI.
 
 * type `$ npm link` on the command line
-  * creates a symlink so we can call "passgen" everywhere in our system
-  * (*hint:* `npm unlink` removes the created symlink)
+  * this creates a symlink so we can call "passgen" everywhere in our system<br /> (*hint:* `npm unlink` removes the created symlink)
 
+> This approach works great *unless* you want to use ECMAScript modules in your scripts.
+
+### Side Note: Execute ES Modules on the CLI
+
+If you want to make ES modules executable on the command line you need to use some shell magic. Instead of using the well known [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) `#!/usr/bin/env node` or `#!/usr/bin/node` add the following code at the beginning of your ES module:
+
+```JS
+":" //#;exec /usr/bin/env node --input-type=module - "$@" < "$0"
+
+import process from 'process';
+const { argv } = process
+console.log(argv)
+```
+
+Save your file as `command.js` and you can run `zsh command.js` on the shell!
+
+Thanks to Bramus for his [enlightening article on that topic](https://www.bram.us/2021/07/28/execute-es-modules-on-the-cli/).
+
+If you want to dig deeper to find out how and why this is working, I suggest to have a look at [this article from 2014](http://sambal.org/2014/02/passing-options-node-shebang-line/).
 ## Acknowlegements
 
 * Traversy Media Video: [Build a Node.js Password Generator](https://www.youtube.com/watch?v=3Xx83JAktXk)
