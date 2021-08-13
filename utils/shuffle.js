@@ -197,6 +197,18 @@ const shuffle = (_data) => {
     array[top] = tmp;
   }
 
+  // Other array shuffling algorithms:
+  // https://1loc.dev/#shuffle-an-array
+  // const shuffle = (arr) =>
+  //   arr
+  //     .map((a) => ({ sort: Math.random(), value: a }))
+  //     .sort((a, b) => a.sort - b.sort)
+  //     .map((a) => a.value);
+
+  // Or this:
+  // https://1loc.dev/#shuffle-an-array
+  // const shuffle = (arr) => arr.sort(() => 0.5 - Math.random());
+
   //   return array;
   // Return shuffled characters as STRING
   return arrayToString(array);

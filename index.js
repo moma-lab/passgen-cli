@@ -31,7 +31,7 @@ program
   .option('-ns, --no-symbols', 'exclude symbols from password') // boolean
   .parse();
 
-// Add a command handler
+// Add a command handler ('commander' module)
 // prettier-ignore
 // program.command('generate').action(() => {
 //     console.log('Generated');
